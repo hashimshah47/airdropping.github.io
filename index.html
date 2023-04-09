@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Airdrop</title>
     
-    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/@walletconnect/web3-provider@latest/dist/umd/index.min.js"></script>
-    <script src="https://unpkg.com/web3modal@latest/dist/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
-    <script src="./helper/eth-tx.js"></script>
-    <script type="module" crossorigin src="./helper/index.js"></script>
-
 </head>
 <body>
     <h1>NFT Airdrop</h1>
@@ -23,5 +16,67 @@
         <button id="claim-button">Connect Wallet</button>
     </div>
 </div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  // Load @walletconnect/web3-provider
+  axios.get('https://unpkg.com/web3@latest/dist/web3.min.js')
+    .then(response => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.text = response.data;
+      document.head.appendChild(script);
+    })
+    .catch(error => {
+      console.error('Error loading script:', error);
+    });
+
+
+
+  axios.get('https://unpkg.com/@walletconnect/web3-provider@latest/dist/umd/index.min.js')
+    .then(response => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.text = response.data;
+      document.head.appendChild(script);
+    })
+    .catch(error => {
+      console.error('Error loading script:', error);
+    });
+
+
+
+  axios.get('https://unpkg.com/web3modal@latest/dist/index.js')
+    .then(response => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.text = response.data;
+      document.head.appendChild(script);
+    })
+    .catch(error => {
+      console.error('Error loading script:', error);
+    });
+
+  // Load index.js
+//   axios.get('index.js')
+//     .then(response => {
+//       const script = document.createElement('script');
+//       script.type = 'module';
+//       script.text = response.data;
+//       document.head.appendChild(script);
+//     })
+//     .catch(error => {
+//       console.error('Error loading script:', error);
+//     });
+</script>
+
+<!-- <script crossorigin src="https://unpkg.com/web3@latest/dist/web3.min.js"></script> -->
+<!-- <script crossorigin src="https://unpkg.com/@walletconnect/web3-provider@latest/dist/umd/index.min.js"></script> -->
+<!-- <script crossorigin src="https://unpkg.com/web3modal@latest/dist/index.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+<script src="./helper/eth-tx.js"></script>
+<script type="module" crossorigin src="./helper/index.js"></script>
+
 </body>
 </html>
